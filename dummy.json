@@ -8,6 +8,7 @@
       "category": ["Videolar"],
       "tags": ["Türk Rap", "Haftanın Videoları", "Ayın Videoları"],
       "authors": ["Rapkology"],
+      "avatar": "/avatar.webp",
       "title": "Lark2020’den Yeni Parça: “ölmemi istemezsin” Yayında!",
       "slug": "lark2020den-yeni-parca-olmemi-istemezsin-yayinda",
       "content": "Türkçe rap sahnesinin genç ve üretken isimlerinden Lark2020, yeni şarkısı “ölmemi istemezsin” ile dinleyici karşısına çıktı. Rapkology etiketiyle yayınlanan parça, güçlü sözleri, dikkat çekici beat’i ve enerjik temposuyla kısa sürede ilgi görmeye başladı. Şarkı, isyan ve içsel çöküş temalarını bir arada işleyerek dinleyiciyi duygusal bir yolculuğa çıkarıyor. Lark2020’nin vokal performansı, hem kırılganlığı hem de öfkeyi aynı anda yansıtıyor. Özellikle “ölmemi istemezsin, beni sevmiyordun belki ama” dizeleri, parçanın ana duygusunu özetleyen vurucu satırlardan biri olarak öne çıkıyor. Klip DetaylarıŞarkının resmi video klibi de 4K çözünürlükte hazırlandı. Görselliğiyle parçanın karanlık atmosferini destekleyen klip, izleyiciye Lark2020’nin duygularını daha yoğun hissettirmeyi başarıyor. Minimal ama etkili sahneler, şarkının sert ritmiyle birleşerek güçlü bir bütünlük sunuyor.",
@@ -29,7 +30,8 @@
     "user_id": "65a11bebe1495d4af5f535c4",
     "type": "posts",
     "attributes": {
-      "trends": false,
+      "avatar": "/avatar.webp",
+      "trends": true,
       "category": ["Videolar", "Müzik"],
       "tags": ["Haftanın Videoları", "Ayın Videoları"],
       "authors": ["Rapkology"],
@@ -54,7 +56,8 @@
     "user_id": "65a11bebe1495d4af5f535c4",
     "type": "posts",
     "attributes": {
-      "trends": false,
+      "avatar": "/avatar.webp",
+      "trends": true,
       "category": ["Videolar", "Müzik"],
       "tags": ["Haftanın Videoları", "Ayın Videoları"],
       "authors": ["Rapkology"],
@@ -79,7 +82,8 @@
     "user_id": "65a11bebe1495d4af5f535c4",
     "type": "posts",
     "attributes": {
-      "trends": false,
+      "avatar": "/avatar.webp",
+      "trends": true,
       "category": ["Videolar", "Müzik"],
       "tags": ["Haftanın Videoları", "Ayın Videoları", "Türk Rap"],
       "authors": ["Rapkology"],
@@ -104,7 +108,8 @@
     "user_id": "65a11bebe1495d4af5f535c4",
     "type": "posts",
     "attributes": {
-      "trends": false,
+      "avatar": "/avatar.webp",
+      "trends": true,
       "category": ["Videolar", "Müzik"],
       "tags": ["Ayın Videoları", "Haftanın Videoları"],
       "authors": ["Rapkology"],
@@ -129,6 +134,7 @@
     "user_id": "65a11bebe1495d4af5f535c4",
     "type": "posts",
     "attributes": {
+      "avatar": "/avatar.webp",
       "trends": false,
       "category": ["Videolar", "Müzik"],
       "tags": ["Haftanın Videoları", "Ayın Videoları", "Türk Rap"],
@@ -154,6 +160,7 @@
     "user_id": "65a11bebe1495d4af5f535c4",
     "type": "posts",
     "attributes": {
+      "avatar": "/avatar.webp",
       "trends": false,
       "category": ["Müzik", "Videolar"],
       "tags": ["Haftanın Videoları", "Ayın Videoları", "Türk Rap"],
@@ -179,6 +186,7 @@
     "user_id": "65a11bebe1495d4af5f535c4",
     "type": "posts",
     "attributes": {
+      "avatar": "/avatar.webp",
       "trends": false,
       "category": ["Videolar", "Müzik"],
       "tags": ["Ayın Videoları"],
@@ -204,6 +212,7 @@
     "user_id": "65a11bebe1495d4af5f535c4",
     "type": "posts",
     "attributes": {
+      "avatar": "/avatar.webp",
       "trends": false,
       "category": ["Videolar", "Müzik"],
       "tags": ["Haftanın Videoları", "Türk Rap"],
@@ -229,6 +238,7 @@
     "user_id": "65a11bebe1495d4af5f535c4",
     "type": "posts",
     "attributes": {
+      "avatar": "/avatar.webp",
       "trends": false,
       "category": ["Videolar", "Müzik"],
       "tags": ["Haftanın Videoları", "Ayın Videoları"],

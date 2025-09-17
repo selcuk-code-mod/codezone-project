@@ -1,3 +1,5 @@
+import dummyJson from "../../dummy.json";
+
 export const homeSliderData = [
   {
     image: "/hero.webp",
@@ -16,6 +18,15 @@ export const homeSliderData = [
     buttonText: "Devamını Oku",
     titleColor: "text-white",
     descriptionColor: "text-white",
+  },
+  {
+    image: "/hero.webp",
+    title: "DÜNYA RAP TRENDLERİNİ KONUŞUYORUZ.",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi",
+    buttonText: "Devamını Oku",
+    titleColor: "text-black",
+    descriptionColor: "text-black",
   },
 ];
 
@@ -59,3 +70,5 @@ export const exploreCategories = [
   "Rap Sohbetleri",
   "Rap Müsabakaları",
 ];
+
+export default dummyJson;
