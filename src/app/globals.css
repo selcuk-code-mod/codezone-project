@@ -1,26 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  font-family: var(--font-saira-condensed), sans-serif;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-my-primary: var(--my-primary);
+  --color-my-secondary: var(--my-secondary);
+  --color-my-background: var(--my-background);
 }
 
-@media (prefers-color-scheme: dark) {
+:root {
+  --radius: 0.225rem;
+  --my-background: #121212;
+  --my-background-secondary: rgba(18, 18, 18, 0.1);
+  --my-primary: #f0e74d;
+  --my-secondary: rgba(255, 255, 255, 1);
+}
+
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --container-width: 1440px;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  .container {
+    max-width: var(--container-width);
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
+  /* Responsive container padding - Tailwind 4 compatible */
+  @media (max-width: 639px) {
+    .container {
+      padding-left: 1.8rem;
+      padding-right: 1.8rem;
+    }
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
 }
