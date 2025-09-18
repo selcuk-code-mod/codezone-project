@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Saira_Condensed } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+// import Footer from "@/components/layout/Footer";
 
 const sairaSans = Saira_Condensed({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -28,7 +28,7 @@ export default function RootLayout({
       >
         <Navbar />
         <main>{children}</main>
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

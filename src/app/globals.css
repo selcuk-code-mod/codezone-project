@@ -23,15 +23,13 @@ body {
   --my-background-secondary: rgba(18, 18, 18, 0.1);
   --my-primary: #efe74d;
   --my-secondary: rgba(255, 255, 255, 1);
-  --my-border: #2a2a2a;
 }
 
 @layer base {
   :root {
     /* Özel renk tanımları */
-    --my-primary: #121212;
-    --my-secondary: #2a2a2a;
-    --my-accent: #f0e74d;
+    --my-primary: #efe74d;
+    --my-border: #2a2a2a;
     --my-neutral: #3b3b3b;
     --my-text: #ffffff;
   }
@@ -117,5 +115,10 @@ body {
   }
   .text-my-text {
     color: var(--my-text);
+  }
+
+  /* Custom gap utilities */
+  .gap-7\.5 {
+    gap: 1.875rem; /* 30px */
   }
 }

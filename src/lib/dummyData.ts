@@ -30,37 +30,6 @@ export const homeSliderData = [
   },
 ];
 
-export const trendData = [
-  {
-    id: 1,
-    title: "Jonathan Stewart",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.",
-    image: "/trend-images/trend1.jpg",
-  },
-  {
-    id: 2,
-    title: "Steve Rogerson",
-    description:
-      "Praesent lorem orci, mattis non efficitur id Curabitur at risus sodales Aenean at.",
-    image: "/trend-images/trend2.jpg",
-  },
-  {
-    id: 3,
-    title: "Ismail Kor",
-    description:
-      "Ultricies dignissim nibh ut cursus. Nam et quam sit amet turpis finibus maximus ...",
-    image: "/trend-images/trend3.jpg",
-  },
-  {
-    id: 4,
-    title: "Jonathan Stewart",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.",
-    image: "/trend-images/trend4.jpg",
-  },
-];
-
 export const exploreCategories = [
   "Türk Rap",
   "Yabancı Rap",
