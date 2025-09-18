@@ -26,7 +26,7 @@ export const Favorites = () => {
   const infiniteItems = [...trendItems, ...trendItems, ...trendItems];
 
   return (
-    <div className="bg-[#121212] text-white min-h-screen p-4 md:p-8">
+    <div className="bg-[#121212] text-white min-h-[500px] p-4 md:p-8">
       <div className="container mx-auto relative">
         <Image
           className="w-full lg:w-1/3"
@@ -71,16 +71,16 @@ export const Favorites = () => {
               slidesPerView={1.5}
               breakpoints={{
                 640: {
-                  slidesPerView: 1.25,
+                  slidesPerView: 1.5,
                   spaceBetween: 20,
                 },
                 1024: {
-                  slidesPerView: 3,
+                  slidesPerView: 2.5,
                   spaceBetween: 20,
                 },
                 1280: {
-                  slidesPerView: 3,
-                  spaceBetween: 30,
+                  slidesPerView: 2.5,
+                  spaceBetween: 20,
                 },
               }}
               centeredSlides={true}
@@ -95,7 +95,7 @@ export const Favorites = () => {
                 draggable: true,
                 dragClass: "swiper-scrollbar-drag-custom",
               }}
-              className="favoriler-swiper h-[200px] lg:h-[265px] w-full lg:w-[900px] relative"
+              className="favoriler-swiper h-[160px] sm:h-[200px] lg:h-[240px] xl:h-[265px] w-full relative"
             >
               {infiniteItems.map((item, index) => {
                 // title2'yi parçalara ayır
@@ -106,37 +106,27 @@ export const Favorites = () => {
                 return (
                   <SwiperSlide
                     key={`${item._id}-${index}`}
-                    className="!w-[250px] md:!w-[275px]"
+                    className="!w-[200px] sm:!w-[250px] lg:!w-[300px] xl:!w-[320px]"
                   >
-                    <div
-                      className="bg-[#2A2A2A] rounded-lg relative overflow-hidden"
-                      style={{
-                        width: "250px",
-                        height: "200px",
-                        maxWidth: "275px",
-                        maxHeight: "250px",
-                      }}
-                    >
+                    <div className="bg-[#2A2A2A] rounded-lg relative overflow-hidden w-[200px] sm:w-[250px] lg:w-[300px] xl:w-[320px] h-[160px] sm:h-[200px] lg:h-[240px] xl:h-[265px]">
                       {/* Mobil Layout (sm ve altı) */}
                       <div className="w-full h-full flex sm:hidden flex-col justify-center items-center">
                         {/* Üst Yarı - Resim */}
-                        <div className="w-full h-1/2 overflow-hidden relative flex items-center justify-center">
+                        <div className="w-full h-1/2  relative flex items-center justify-center">
                           <Image
                             src={item.attributes.img}
                             alt={item.attributes.title}
                             width={100}
                             height={100}
+                            className="w-[80px] h-[60px] sm:w-[80px] sm:h-[80px] object-cover rounded-lg"
                             style={{
-                              objectFit: "cover",
-                              width: "80px",
-                              height: "80px",
-                              borderRadius: "8px",
+                              transform: "rotate(-10deg)",
                             }}
                           />
                           {/* Play Butonu */}
                           <BsPlayCircleFill
                             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
-                            text-white text-3xl cursor-pointer 
+                            text-white text-2xl sm:text-3xl cursor-pointer 
                             hover:scale-110 transition-transform duration-300"
                           />
                         </div>
@@ -147,7 +137,7 @@ export const Favorites = () => {
                             <div className="bg-[#323232] text-white px-2 py-1 rounded-full text-xs inline-block mb-2">
                               Top 10 ({item.rank}. Sıra)
                             </div>
-                            <h3 className="text-sm uppercase">
+                            <h3 className="text-xs sm:text-sm uppercase">
                               {titleParts.map((word, index) => (
                                 <React.Fragment key={index}>
                                   {word}
@@ -163,27 +153,25 @@ export const Favorites = () => {
                       <div className="hidden sm:block md:block lg:block xl:block 2xl:block w-full h-full">
                         {/* Sol Yarı - Resim (Yarısı Gizli) */}
                         <div
-                          className="absolute top-8 left-0 w-1/2 h-full overflow-hidden"
-                          style={{
-                            clipPath: "polygon(0 0, 50% 0, 80% 100%, 0 100%)",
-                          }}
+                          className="absolute top-10 left-0 w-1/2 h-full"
+                          // style={{
+                          //   clipPath: "polygon(0 0, 50% 0, 80% 100%, 0 100%)",
+                          // }}
                         >
                           <Image
                             src={item.attributes.img}
                             alt={item.attributes.title}
                             width={250}
                             height={200}
+                            className="object-cover w-[200%] max-w-none"
                             style={{
-                              objectFit: "cover",
-                              transform: "translateX(-50%)",
-                              width: "200%",
-                              maxWidth: "none",
+                              transform: "translateX(-50%) rotate(-10deg)",
                             }}
                           />
                           {/* Play Butonu */}
                           <BsPlayCircleFill
-                            className="absolute top-20 -left-2 transform -translate-x-1/2 -translate-y-1/2 
-                            text-white text-3xl md:text-4xl cursor-pointer 
+                            className="absolute top-16 sm:top-20 -left-2 transform -translate-x-1/2 -translate-y-1/2 
+                            text-white text-2xl sm:text-3xl lg:text-4xl cursor-pointer 
                             hover:scale-110 transition-transform duration-300"
                           />
                         </div>
@@ -194,7 +182,7 @@ export const Favorites = () => {
                             <div className="bg-[#323232] text-white px-2 md:px-3 py-1 rounded-full text-xs inline-block mb-2 md:mb-4">
                               Top 10 ({item.rank}. Sıra)
                             </div>
-                            <h3 className="text-sm md:text-[18px] uppercase mb-2 md:mb-4">
+                            <h3 className="text-sm lg:text-base xl:text-[18px] uppercase mb-2 lg:mb-3 xl:mb-4">
                               {titleParts.map((word, index) => (
                                 <React.Fragment key={index}>
                                   {word}
@@ -212,7 +200,7 @@ export const Favorites = () => {
             </Swiper>
 
             {/* Custom Scrollbar */}
-            <div className="custom-scrollbar w-full h-2  bg-black mt-4 rounded-full overflow-hidden">
+            <div className="custom-scrollbar w-full h-[5px]  bg-black mt-4 rounded-full overflow-hidden">
               <div className="swiper-scrollbar-drag-custom w-full h-full bg-my-primary rounded-full"></div>
             </div>
           </div>

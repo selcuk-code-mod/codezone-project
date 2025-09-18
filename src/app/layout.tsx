@@ -24,11 +24,10 @@ export default function RootLayout({
   return (
     <html lang="tr">
       <body
-        className={`${sairaSans.variable} bg-my-background  text-my-text-white`}
+        className={`${sairaSans.variable} bg-my-background text-my-text-white`}
       >
         <Navbar />
         <main>{children}</main>
-        {/* <Footer /> */}
       </body>
     </html>
   );

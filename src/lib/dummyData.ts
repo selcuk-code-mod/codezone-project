@@ -34,8 +34,8 @@ export const exploreCategories = [
   "Türk Rap",
   "Yabancı Rap",
   "Rap Haberleri",
-  "Haftanın Klipleri",
-  "Ayın Klipleri",
+  "Haftanın Videoları",
+  "Ayın Videoları",
   "Rap Sohbetleri",
   "Rap Müsabakaları",
 ];
