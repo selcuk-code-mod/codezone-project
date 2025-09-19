@@ -39,22 +39,6 @@ const HomeSlider: React.FC = () => {
     }
   };
 
-  // Responsive style kontrolü
-  const getImageStyle = (index: number) => {
-    if (index === 1) {
-      return {
-        left: "-20%",
-        top: "15%",
-        // Sadece lg ve xl ekranlarda uygulanacak
-        "@media (max-width: 1023px)": {
-          left: "0",
-          top: "0",
-        },
-      };
-    }
-    return {};
-  };
-
   return (
     <div className="relative">
       <Swiper
@@ -85,22 +69,22 @@ const HomeSlider: React.FC = () => {
                 priority
                 className={`object-cover ${
                   index === 1
-                    ? "lg:!left-[-20%] lg:!top-[15%] xl:!left-[-20%] xl:!top-[15%]"
+                    ? "!top-[30%] lg:!left-[-20%] lg:!top-[15%] xl:!left-[-20%] xl:!top-[15%]"
                     : ""
                 }`}
               />
-              <div className="absolute w-full sm:w-2/3 md:w-1/2 lg:w-2/5 xl:w-1/3 2xl:w-1/4 h-full flex flex-col justify-center space-y-3 sm:space-y-4 md:space-y-5 right-4 sm:right-8 md:right-16 lg:right-32 xl:right-48 2xl:right-60 px-4 sm:px-0">
+              <div className="absolute w-full sm:w-2/3 md:w-1/2 lg:w-2/5 xl:w-1/3 2xl:w-1/4 h-full flex flex-col justify-center space-y-3 sm:space-y-4 md:space-y-5 right-0 sm:right-6 md:right-8 lg:right-32 xl:right-48 2xl:right-60 px-4 sm:px-0">
                 <h1
-                  className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold font-saira-condensed ${slide.titleColor}`}
+                  className={`text-2xl pl-28 sm:pl-0 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold font-saira-condensed ${slide.titleColor}`}
                 >
                   {slide.title}
                 </h1>
                 <p
-                  className={`text-sm sm:text-base md:text-lg lg:text-xl ${slide.descriptionColor}`}
+                  className={`hidden md:block text-sm sm:text-base md:text-lg lg:text-xl ${slide.descriptionColor}`}
                 >
                   {slide.description}
                 </p>
-                <div className="flex">
+                <div className="flex justify-center sm:justify-center md:justify-start">
                   <Button className="text-sm sm:text-base md:text-lg">
                     {slide.buttonText}
                   </Button>
@@ -128,23 +112,32 @@ const HomeSlider: React.FC = () => {
         ))}
 
         {/* Custom Navigation */}
-        <div className="custom-prev-button hidden lg:flex absolute left-2 sm:left-3 md:left-4 lg:left-5 top-1/2 transform -translate-y-1/2 z-10 text-white cursor-pointer">
-          <GoArrowLeft className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12" />
+        <div className="custom-prev-button hidden lg:flex absolute left-2 sm:left-3 md:left-4 lg:left-10 xl:left-16 top-1/2 transform -translate-y-1/2 z-10 text-my-primary cursor-pointer">
+          <GoArrowLeft className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 xl:w-14 xl:h-14" />
         </div>
-        <div className="custom-next-button hidden lg:flex absolute right-2 sm:right-3 md:right-4 lg:right-5 top-1/2 transform -translate-y-1/2 z-10 text-white cursor-pointer">
-          <GoArrowRight className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12" />
+        <div className="custom-next-button hidden lg:flex absolute right-2 sm:right-3 md:right-4 lg:right-10 xl:right-16 top-1/2 transform -translate-y-1/2 z-10 text-my-primary cursor-pointer">
+          <GoArrowRight className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 xl:w-14 xl:h-14" />
         </div>
       </Swiper>
 
       {/* Slider Vector */}
-      <Image
-        src="/slider-vector.png"
-        alt="Slider Vector"
-        color="#fff"
-        width={1920}
-        height={1080}
-        className="absolute -bottom-4 xs:-bottom-5 sm:-bottom-6 md:-bottom-8 lg:-bottom-10 xl:-bottom-12 2xl:-bottom-14 left-0 right-0 w-full max-w-full h-auto object-cover object-center z-10"
-      />
+      <div className="absolute hidden lg:block -bottom-2 xs:-bottom-3 sm:-bottom-4 md:-bottom-5 lg:-bottom-6 xl:-bottom-8 2xl:-bottom-10 left-0 right-0 w-full h-full object-cover object-center z-10">
+        <Image
+          src="/slider-vector.png"
+          alt="Slider Vector"
+          color="#fff"
+          width={1400}
+          height={1080}
+          className="absolute hidden lg:block 
+          -bottom-2 xs:-bottom-3 sm:-bottom-4 md:-bottom-5 
+          lg:-bottom-6 xl:-bottom-8 2xl:-bottom-10 
+          left-0 right-0 
+          w-full max-w-full 
+          h-auto 
+          object-cover object-center 
+          z-10"
+        />
+      </div>
     </div>
   );
 };

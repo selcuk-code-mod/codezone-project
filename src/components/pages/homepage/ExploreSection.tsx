@@ -51,7 +51,7 @@ export const ExploreSection = () => {
 
   return (
     <div className="bg-[#121212] text-white py-8 md:py-8 lg:py-16 px-4">
-      <div className="container mx-auto max-w-7xl">
+      <div className="container mx-auto lg:max-w-5xl xl:max-w-6xl 2xl:max-w-9xl">
         {/* Horizontal Layout (Default) */}
         {!isVerticalLayout && (
           <>

@@ -23,14 +23,14 @@ export const TrendsSection: React.FC = () => {
           <IoTrendingUpSharp className="text-my-primary text-5xl" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 cursor-pointer">
           {trends.map((item) => (
             <div
               key={item.id}
               className="flex justify-between space-x-4 bg-my-card-dark p-6 rounded-lg relative"
             >
               <div className="flex justify-between w-full space-x-6">
-                <div className="text-6xl font-bold text-[#2A2A2A] absolute top-4 left-4">
+                <div className="text-6xl font-bold text-[#2A2A2A] hover:text-my-primary transition-colors active:text-my-primary focus:text-my-primary absolute top-4 left-4">
                   {item.id}
                 </div>
                 <div className="space-y-4 ml-20 w-full">
