@@ -68,14 +68,22 @@ const HomeSlider: React.FC = () => {
                 fill
                 priority
                 className={`object-cover ${
-                  index === 1
-                    ? "!top-[30%] lg:!left-[-20%] lg:!top-[15%] xl:!left-[-20%] xl:!top-[15%]"
-                    : ""
+                  index === 1 ? "!top-[30%] lg:!left-[-20%] lg:!top-[15%]" : ""
                 }`}
               />
-              <div className="absolute w-full sm:w-2/3 md:w-1/2 lg:w-2/5 xl:w-1/3 2xl:w-1/4 h-full flex flex-col justify-center space-y-3 sm:space-y-4 md:space-y-5 right-0 sm:right-6 md:right-8 lg:right-32 xl:right-48 2xl:right-60 px-4 sm:px-0">
+              <div
+                className={`absolute w-full sm:w-2/3 md:w-1/2 lg:w-2/5 xl:w-1/3 2xl:w-1/4 h-full flex flex-col justify-center space-y-3  md:space-y-3.5 right-0 sm:right-6 md:right-8 lg:right-32 xl:right-48 2xl:right-60 px-4 sm:px-0 ${
+                  index === 1
+                    ? "xl:pt-20 -top-[12%] sm:top-0 text-center xl:text-start"
+                    : ""
+                } ${
+                  index === 0 || index === 2
+                    ? "-top-[15%] left-[10%] sm:left-[50%] sm:top-6 text-center md:text-start xl:text-start"
+                    : ""
+                }`}
+              >
                 <h1
-                  className={`text-2xl pl-28 sm:pl-0 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold font-saira-condensed ${slide.titleColor}`}
+                  className={`text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-bold font-saira-condensed ${slide.titleColor}`}
                 >
                   {slide.title}
                 </h1>
@@ -84,13 +92,17 @@ const HomeSlider: React.FC = () => {
                 >
                   {slide.description}
                 </p>
-                <div className="flex justify-center sm:justify-center md:justify-start">
+                <div className="flex justify-center sm:justify-center md:justify-start mb-24">
                   <Button className="text-sm sm:text-base md:text-lg">
                     {slide.buttonText}
                   </Button>
                 </div>
                 {/* Disc Navigation */}
-                <div className="absolute bottom-16 sm:bottom-20 md:bottom-24 lg:bottom-28 left-4 sm:left-8 md:left-12 transform -translate-x-1/2 hidden lg:flex items-center space-x-4 z-10">
+                <div
+                  className={`absolute bottom-16 sm:bottom-20 md:bottom-24 lg:bottom-28 xl:bottom-32 left-4 sm:left-8 md:left-12 transform -translate-x-1/2 hidden lg:flex items-center space-x-4 z-10 ${
+                    index === 0 || index === 2 ? "xl:pb-16" : ""
+                  }`}
+                >
                   <div className="flex space-x-1 sm:space-x-2">
                     {homeSliderData.map((_, index) => (
                       <div
@@ -99,7 +111,7 @@ const HomeSlider: React.FC = () => {
                         className={`w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 lg:w-3 lg:h-3 rounded-full cursor-pointer transition-all duration-300 
                   ${
                     activeSlide === index
-                      ? "bg-my-primary text-my-primary"
+                      ? "bg-my-primary text-my-primary "
                       : "bg-black text-black"
                   }`}
                       />

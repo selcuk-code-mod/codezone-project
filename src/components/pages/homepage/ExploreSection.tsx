@@ -178,7 +178,7 @@ export const ExploreSection = () => {
                   <div className="flex flex-col  gap-8 mb-16">
                     {/* Newsletter Kayıt Formu */}
                     <div className="flex justify-between">
-                      <div className="text-white text-sm ps-28 font-bold font-['Saira_Condensed'] leading-[14px]">
+                      <div className="text-white text-sm ps-16 font-bold font-['Saira_Condensed'] leading-[14px]">
                         EMAIL
                       </div>
 
@@ -189,9 +189,9 @@ export const ExploreSection = () => {
                         </button>
                       </div>
                     </div>
-                    <div className="w-76 ms-28 h-px  bg-[#3B3B3B]"></div>
+                    <div className="w-76 ms-[66px] h-px  bg-[#3B3B3B]"></div>
                     {/* Sosyal Medya İkonları */}
-                    <div className="flex ms-28 gap-5">
+                    <div className="flex ms-16 gap-5">
                       <FaFacebookF className="text-my-primary text-2xl hover:opacity-80 cursor-pointer transition-opacity" />
                       <FaTwitter className="text-my-primary text-2xl hover:opacity-80 cursor-pointer transition-opacity" />
                       <FaDiscord className="text-my-primary text-2xl hover:opacity-80 cursor-pointer transition-opacity" />
@@ -199,9 +199,9 @@ export const ExploreSection = () => {
                       <FaYoutube className="text-my-primary text-2xl hover:opacity-80 cursor-pointer transition-opacity" />
                     </div>
                     {/* Footer Linkleri */}
-                    <div className="flex flex-col lg:flex-row justify-end gap-8 pt-10 ms-28">
+                    <div className="flex flex-col lg:flex-row justify-end gap-8 pt-10 ms-[66px]">
                       {/* Navigasyon Linkleri */}
-                      <div className="flex flex-wrap justify-end pe-16 gap-6 text-md order-2 lg:order-1">
+                      <div className="flex flex-wrap gap-6 text-md">
                         <a
                           href="#"
                           className="text-white font-['Saira_Condensed'] leading-[14px] hover:text-my-primary transition-colors"
@@ -235,7 +235,7 @@ export const ExploreSection = () => {
                       </div>
                     </div>
                     <div>
-                      <p className="text-[#5C5C5C] text-sm font-['Saira_Condensed'] leading-[14px] text-center ms-10">
+                      <p className="text-[#5C5C5C] text-sm font-['Saira_Condensed'] leading-[14px] ms-[66px]">
                         © RAPKOLOGY All Rights Are Reserved 2022.
                       </p>
                     </div>
