@@ -62,6 +62,7 @@ const HomeSlider: React.FC = () => {
         xl:bottom-60 
         xl:left-[calc(50%+100px)]
         xl:-translate-x-1/2
+        2xl:top-128
       `}
     >
       <Button variant="primary">
