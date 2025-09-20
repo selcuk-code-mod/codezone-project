@@ -138,7 +138,7 @@ export const ExploreSection = () => {
 
                           {/* Alt Kısım - Buton */}
                           <div className="flex justify-between items-center">
-                            <button className="text-white text-sm font-normal font-['Saira_Condensed'] hover:text-my-primary transition-colors duration-300">
+                            <button className="text-white text-sm font-normal font-['Saira_Condensed'] hover:text-my-primary transition-colors duration-300 cursor-pointer">
                               Daha Fazla Oku
                             </button>
                           </div>
@@ -157,7 +157,7 @@ export const ExploreSection = () => {
                     {exploreCategories.slice(0, 7).map((category, index) => (
                       <button
                         key={index}
-                        className={`px-4 py-1 rounded-sm border text-base font-medium transition-all duration-300 hover:bg-my-primary hover:text-black whitespace-nowrap ${
+                        className={`cursor-pointer px-4 py-1 rounded-sm border text-base font-medium transition-all duration-300 hover:bg-my-primary hover:text-black whitespace-nowrap ${
                           category === "Yabancı Rap"
                             ? "bg-my-primary text-black border-my-primary"
                             : "bg-transparent text-white border-white hover:border-my-primary"
@@ -329,7 +329,7 @@ export const ExploreSection = () => {
                           className="object-cover w-full h-full"
                         />
                       </div>
-                      <span className="text-white text-sm font-normal font-['Saira']">
+                      <span className="text-white text-sm font-normal font-['Saira_Condensed']">
                         {article.attributes.authors[0]}
                       </span>
                     </div>
@@ -341,10 +341,10 @@ export const ExploreSection = () => {
 
                     {/* Alt Kısım - Tarih ve Buton */}
                     <div className="flex justify-between items-center">
-                      <span className="text-[#3B3B3B] text-xs font-normal font-['Saira']">
+                      <span className="text-[#3B3B3B] text-xs font-normal font-['Saira_Condensed']">
                         {formatDate(article.createdAt)}
                       </span>
-                      <button className="text-white text-xs font-normal font-['Saira'] hover:text-my-primary transition-colors duration-300">
+                      <button className="text-white text-xs font-normal font-['Saira_Condensed'] hover:text-my-primary transition-colors duration-300 cursor-pointer">
                         Daha Fazla Oku
                       </button>
                     </div>

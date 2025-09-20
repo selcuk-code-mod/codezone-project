@@ -18,7 +18,7 @@ const Button: React.FC<ButtonProps> = ({
     "flex items-center justify-center space-x-2 text-sm font-bold transition-all duration-300 group";
 
   const variantClasses = {
-    primary: "bg-yellow-400 text-black hover:bg-opacity-90",
+    primary: "bg-my-primary text-black hover:bg-opacity-90",
     secondary: "bg-white text-black hover:bg-opacity-90 border-2 border-black",
   };
 
