@@ -4,11 +4,11 @@ Bu proje, Next.js 15 App Router kullanılarak geliştirilmiş modern bir web uyg
 
 Proje Klasör Yapısı;
 
-rc/app/
-├── layout.tsx # Tüm sayfalar için temel düzen (layout)
-├── page.tsx # Kök sayfa
-├── globals.css # Global stil dosyası
-└── (routes)/ # Sayfa gruplandırma dizini
+rc/app/ <br>
+├── layout.tsx # Tüm sayfalar için temel düzen (layout) <br>
+├── page.tsx # Kök sayfa <br>
+├── globals.css # Global stil dosyası <br>
+└── (routes)/ # Sayfa gruplandırma dizini <br>
 
 Teknoloji Yığını
 -Framework: Next.js 15 (App Router)
