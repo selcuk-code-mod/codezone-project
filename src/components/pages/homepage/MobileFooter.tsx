@@ -118,7 +118,7 @@ function MobileFooter() {
                 <span className="text-[#3B3B3B] text-xs font-normal font-['Saira_Condensed']">
                   {formatDate(article.createdAt)}
                 </span>
-                <button className="text-white text-xs font-normal font-['Saira_Condensed'] hover:text-my-primary transition-colors duration-300">
+                <button className="cursor-pointer text-white text-xs font-normal font-['Saira_Condensed'] hover:text-my-primary transition-colors duration-300">
                   Daha Fazla Oku
                 </button>
               </div>
@@ -137,7 +137,7 @@ function MobileFooter() {
           </div>
 
           <div>
-            <button className="flex gap-2 text-my-primary font-bold text-sm font-['Saira_Condensed'] leading-[14px] hover:opacity-80 transition-opacity">
+            <button className="cursor-pointer flex gap-2 text-my-primary font-bold text-sm font-['Saira_Condensed'] leading-[14px] hover:opacity-80 transition-opacity">
               GÖNDER
               <FaArrowRight />
             </button>

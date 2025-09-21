@@ -215,7 +215,7 @@ export const ExploreSection = () => {
                         <div>
                           <button
                             type="submit"
-                            className="flex gap-2 text-my-primary font-bold text-sm font-['Saira_Condensed'] leading-[14px] hover:opacity-80 transition-opacity"
+                            className="cursor-pointer flex gap-2 text-my-primary font-bold text-sm font-['Saira_Condensed'] leading-[14px] hover:opacity-80 transition-opacity"
                           >
                             GÖNDER
                             <FaArrowRight />
@@ -251,7 +251,7 @@ export const ExploreSection = () => {
                     {/* Footer Linkleri */}
                     <div className="flex flex-col lg:flex-row justify-end gap-8 pt-10 ms-[66px]">
                       {/* Navigasyon Linkleri */}
-                      <div className="flex flex-wrap gap-6 text-md">
+                      <div className="flex flex-wrap justify-center gap-8  text-md order-2 lg:order-1">
                         <a
                           href="#"
                           className="text-white font-['Saira_Condensed'] leading-[14px] hover:text-my-primary transition-colors"
@@ -336,7 +336,7 @@ export const ExploreSection = () => {
                 {exploreCategories.map((category, index) => (
                   <button
                     key={index}
-                    className={`px-3 py-1.5 md:px-8 md:py-2 rounded-lg border text-xs md:text-sm font-medium transition-all duration-300 hover:bg-my-primary hover:text-black whitespace-nowrap ${
+                    className={`cursor-pointer px-3 py-1.5 md:px-8 md:py-2 rounded-lg border text-xs md:text-sm font-medium transition-all duration-300 hover:bg-my-primary hover:text-black whitespace-nowrap ${
                       category === "Yabancı Rap"
                         ? "bg-my-primary text-black border-my-primary"
                         : "bg-transparent text-white border-white hover:border-my-primary"
@@ -394,7 +394,7 @@ export const ExploreSection = () => {
                       <span className="text-[#3B3B3B] text-xs font-normal font-['Saira_Condensed']">
                         {formatDate(article.createdAt)}
                       </span>
-                      <button className="text-white text-xs font-normal font-['Saira_Condensed'] hover:text-my-primary transition-colors duration-300">
+                      <button className="cursor-pointer text-white text-xs font-normal font-['Saira_Condensed'] hover:text-my-primary transition-colors duration-300">
                         Daha Fazla Oku
                       </button>
                     </div>
@@ -413,7 +413,7 @@ export const ExploreSection = () => {
                 </div>
 
                 <div>
-                  <button className="flex gap-2 text-my-primary font-bold text-sm font-['Saira_Condensed'] leading-[14px] hover:opacity-80 transition-opacity">
+                  <button className="cursor-pointer flex gap-2 text-my-primary font-bold text-sm font-['Saira_Condensed'] leading-[14px] hover:opacity-80 transition-opacity">
                     GÖNDER
                     <FaArrowRight />
                   </button>
