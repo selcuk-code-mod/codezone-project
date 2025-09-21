@@ -59,10 +59,10 @@ const HomeSlider: React.FC = () => {
        lg:bottom-56 
         lg:left-164
         lg:-translate-x-1/2
-        xl:bottom-60 
+        xl:top-112 
         xl:left-[calc(50%+100px)]
         xl:-translate-x-1/2
-        2xl:top-128
+        2xl:top-132 
       `}
     >
       <Button variant="primary">
@@ -147,7 +147,7 @@ const HomeSlider: React.FC = () => {
       </button>
 
       {/* Disc Navigation - Swiper dışında tek bir yerde */}
-      <div className="absolute bottom-16 sm:bottom-20 md:bottom-24 lg:bottom-28 xl:bottom-32 left-16 sm:left-8 md:left-12 lg:left-152 xl:left-[calc(50%+50px)] hidden lg:flex items-center space-x-4 z-20">
+      <div className="absolute bottom-16 sm:bottom-20 md:bottom-24 lg:bottom-28 xl:bottom-32 left-16 sm:left-8 md:left-12 lg:left-152 xl:left-[calc(50%+50px)] 2xl:left-[calc(50%+50px)] hidden lg:flex items-center space-x-4 z-20">
         <div className="flex space-x-1 sm:space-x-2">
           {homeSliderData.map((_, index) => (
             <button

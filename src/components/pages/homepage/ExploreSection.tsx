@@ -49,6 +49,32 @@ export const ExploreSection = () => {
     });
   };
 
+  const [email, setEmail] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert("Lütfen geçerli bir email adresi girin.");
+      return;
+    }
+
+    console.log("Email gönderildi:", email);
+
+    // Simüle edilmiş API çağrısı
+    setTimeout(() => {
+      setIsSubmitted(true);
+      setEmail("");
+
+      // 3 saniye sonra başarı mesajını kapat
+      setTimeout(() => {
+        setIsSubmitted(false);
+      }, 3000);
+    }, 500);
+  };
+
   return (
     <div className="bg-[#121212] text-white py-8 md:py-8 lg:py-16 px-4">
       <div className="container mx-auto lg:max-w-5xl xl:max-w-6xl 2xl:max-w-9xl">
@@ -177,19 +203,43 @@ export const ExploreSection = () => {
                   {/* Newsletter ve Sosyal Medya Bölümü */}
                   <div className="flex flex-col  gap-8 mb-16">
                     {/* Newsletter Kayıt Formu */}
-                    <div className="flex justify-between">
-                      <div className="text-white text-sm ps-16 font-bold font-['Saira_Condensed'] leading-[14px]">
-                        EMAIL
+                    <form
+                      onSubmit={handleSubmit}
+                      className="flex flex-col space-y-4"
+                    >
+                      <div className="flex justify-between">
+                        <div className="text-white text-sm ps-16 font-bold font-['Saira_Condensed'] leading-[14px]">
+                          EMAIL
+                        </div>
+
+                        <div>
+                          <button
+                            type="submit"
+                            className="flex gap-2 text-my-primary font-bold text-sm font-['Saira_Condensed'] leading-[14px] hover:opacity-80 transition-opacity"
+                          >
+                            GÖNDER
+                            <FaArrowRight />
+                          </button>
+                        </div>
                       </div>
 
-                      <div>
-                        <button className="flex  gap-2 text-my-primary font-bold text-sm font-['Saira_Condensed'] leading-[14px] hover:opacity-80 transition-opacity">
-                          GÖNDER
-                          <FaArrowRight />
-                        </button>
+                      <div className="relative">
+                        <input
+                          type="email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          placeholder="E-posta adresinizi girin"
+                          className="w-76 ms-[66px] pr-4 py-2 bg-transparent border-b border-[#3B3B3B] text-white focus:outline-none focus:border-my-primary transition-colors duration-300 font-['Saira_Condensed']"
+                          required
+                        />
+                        {isSubmitted && (
+                          <div className="absolute right-0 top-1/2 transform -translate-y-1/2 text-my-primary text-sm">
+                            Gönderildi!
+                          </div>
+                        )}
                       </div>
-                    </div>
-                    <div className="w-76 ms-[66px] h-px  bg-[#3B3B3B]"></div>
+                    </form>
+
                     {/* Sosyal Medya İkonları */}
                     <div className="flex ms-16 gap-5">
                       <FaFacebookF className="text-my-primary text-2xl hover:opacity-80 cursor-pointer transition-opacity" />
@@ -329,7 +379,7 @@ export const ExploreSection = () => {
                           className="object-cover w-full h-full"
                         />
                       </div>
-                      <span className="text-white text-sm font-normal font-['Saira_Condensed']">
+                      <span className="text-white text-sm font-normal font-['Saira']">
                         {article.attributes.authors[0]}
                       </span>
                     </div>
@@ -341,10 +391,10 @@ export const ExploreSection = () => {
 
                     {/* Alt Kısım - Tarih ve Buton */}
                     <div className="flex justify-between items-center">
-                      <span className="text-[#3B3B3B] text-xs font-normal font-['Saira_Condensed']">
+                      <span className="text-[#3B3B3B] text-xs font-normal font-['Saira']">
                         {formatDate(article.createdAt)}
                       </span>
-                      <button className="text-white text-xs font-normal font-['Saira_Condensed'] hover:text-my-primary transition-colors duration-300 cursor-pointer">
+                      <button className="text-white text-xs font-normal font-['Saira'] hover:text-my-primary transition-colors duration-300">
                         Daha Fazla Oku
                       </button>
                     </div>
