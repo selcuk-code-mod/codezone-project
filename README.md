@@ -39,7 +39,7 @@ Bu proje, `next/font` kullanarak Geist font ailesini otomatik olarak optimize ed
 
 -Icon
 
-Iconlar için gemiş bir icon ağı bulunan React-icons ico kutuphanesı kullanılmıştır.
+Iconlar için gemiş bir icon ağı bulunan React-icons icon kutuphanesı kullanılmıştır.
 
 -Responsive Mobil Menu için hamburger-react kutuphanesi kullanıldı.
 
