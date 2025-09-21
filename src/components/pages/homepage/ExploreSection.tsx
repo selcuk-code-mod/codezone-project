@@ -28,16 +28,57 @@ interface Article {
     content: string;
     authors: string[];
     avatar: string;
+    tags: string[];
   };
   createdAt: string;
 }
 
 export const ExploreSection = () => {
-  // İlk 5 makaleyi al
-  const articles = (articlesData as unknown as Article[]).slice(0, 5);
+  // Tüm makaleleri al
+  const allArticles = articlesData as unknown as Article[];
 
   // Layout mode state - false: horizontal layout, true: vertical layout
   const [isVerticalLayout, setIsVerticalLayout] = useState(false);
+
+  // Toggle cards state
+  const [showAllCards, setShowAllCards] = useState(false);
+
+  // Badge filter state - başlangıçta "Türk Rap" aktif
+  const [activeFilter, setActiveFilter] = useState("Türk Rap");
+
+  // Filtrelenmiş makaleleri al
+  const getFilteredArticles = () => {
+    if (activeFilter === "Türk Rap") {
+      return allArticles.filter((article: Article) =>
+        article.attributes.tags.some(
+          (tag: string) =>
+            tag.toLowerCase().includes("türk rap") ||
+            tag.toLowerCase().includes("turkish rap")
+        )
+      );
+    }
+
+    return allArticles.filter((article: Article) =>
+      article.attributes.tags.some((tag: string) =>
+        tag.toLowerCase().includes(activeFilter.toLowerCase())
+      )
+    );
+  };
+
+  // İlk 3 kartı göster, showAllCards true ise tümünü göster
+  const filteredArticles = getFilteredArticles();
+  const displayedArticles = showAllCards
+    ? filteredArticles
+    : filteredArticles.slice(0, 3);
+
+  const toggleCards = () => {
+    setShowAllCards(!showAllCards);
+  };
+
+  const handleFilterChange = (filter: string) => {
+    setActiveFilter(filter);
+    setShowAllCards(false); // Yeni filtre seçildiğinde kartları kapat
+  };
 
   // Tarih formatlama fonksiyonu
   const formatDate = (dateString: string) => {
@@ -110,7 +151,7 @@ export const ExploreSection = () => {
 
                   {/* Keşfet altında kartlar row olarak */}
                   <div className="flex flex-col gap-5 pb-4 mb-16 ">
-                    {articles.map((article: Article) => (
+                    {displayedArticles.map((article: Article) => (
                       <div
                         key={article._id}
                         className="flex bg-my-background rounded-lg overflow-hidden w-full flex-shrink-0"
@@ -172,6 +213,13 @@ export const ExploreSection = () => {
                       </div>
                     ))}
                   </div>
+
+                  {/* Daha Fazla Gör/Gizle Butonu - Horizontal Layout */}
+                  <div className="text-center mb-8">
+                    <Button variant="secondary" onClick={toggleCards}>
+                      {showAllCards ? "GİZLE" : "DAHA FAZLA GÖR"}
+                    </Button>
+                  </div>
                 </div>
 
                 {/* Sağ - Ne Görmek İstersin ve Badges */}
@@ -183,8 +231,9 @@ export const ExploreSection = () => {
                     {exploreCategories.slice(0, 7).map((category, index) => (
                       <button
                         key={index}
+                        onClick={() => handleFilterChange(category)}
                         className={`cursor-pointer px-4 py-1 rounded-sm border text-base font-medium transition-all duration-300 hover:bg-my-primary hover:text-black whitespace-nowrap ${
-                          category === "Yabancı Rap"
+                          category === activeFilter
                             ? "bg-my-primary text-black border-my-primary"
                             : "bg-transparent text-white border-white hover:border-my-primary"
                         }`}
@@ -194,7 +243,7 @@ export const ExploreSection = () => {
                     ))}
                   </div>
                   {/* Gelişmelerden İlk Sen Haberdar Ol */}
-                  <div className="text-end mb-8">
+                  <div className="text-end mb-8 pt-32">
                     <h3 className="text-2xl lg:text-4xl font-bold font-['Saira_Condensed'] uppercase mb-6">
                       GELİŞMELERDEN İLK SEN HABERDAR OL!
                     </h3>
@@ -251,7 +300,7 @@ export const ExploreSection = () => {
                     {/* Footer Linkleri */}
                     <div className="flex flex-col lg:flex-row justify-end gap-8 pt-10 ms-[66px]">
                       {/* Navigasyon Linkleri */}
-                      <div className="flex flex-wrap justify-center gap-8  text-md order-2 lg:order-1">
+                      <div className="flex flex-wrap justify-center gap-8 pe-10 text-md order-2 lg:order-1">
                         <a
                           href="#"
                           className="text-white font-['Saira_Condensed'] leading-[14px] hover:text-my-primary transition-colors"
@@ -285,7 +334,7 @@ export const ExploreSection = () => {
                       </div>
                     </div>
                     <div>
-                      <p className="text-[#5C5C5C] text-sm font-['Saira_Condensed'] leading-[14px] ms-[66px]">
+                      <p className="text-[#5C5C5C] text-sm font-['Saira_Condensed'] leading-[14px] ms-[90px]">
                         © RAPKOLOGY All Rights Are Reserved 2022.
                       </p>
                     </div>
@@ -336,8 +385,9 @@ export const ExploreSection = () => {
                 {exploreCategories.map((category, index) => (
                   <button
                     key={index}
+                    onClick={() => handleFilterChange(category)}
                     className={`cursor-pointer px-3 py-1.5 md:px-8 md:py-2 rounded-lg border text-xs md:text-sm font-medium transition-all duration-300 hover:bg-my-primary hover:text-black whitespace-nowrap ${
-                      category === "Yabancı Rap"
+                      category === activeFilter
                         ? "bg-my-primary text-black border-my-primary"
                         : "bg-transparent text-white border-white hover:border-my-primary"
                     }`}
@@ -350,7 +400,7 @@ export const ExploreSection = () => {
 
             {/* Vertical Layout - Kartlar alt alta */}
             <div className="space-y-16 mb-12 max-w-2xl mx-auto">
-              {articles.map((article: Article) => (
+              {displayedArticles.map((article: Article) => (
                 <div
                   key={`vertical-${article._id}`}
                   className="flex flex-col bg-[#1a1a1a] rounded-lg overflow-hidden"
@@ -403,9 +453,11 @@ export const ExploreSection = () => {
               ))}
             </div>
 
-            {/* Daha Fazla Gör Butonu - Sadece Vertical Layout'ta */}
+            {/* Daha Fazla Gör/Gizle Butonu - Sadece Vertical Layout'ta */}
             <div className="text-center mb-16">
-              <Button variant="secondary">DAHA FAZLA GÖR</Button>
+              <Button variant="secondary" onClick={toggleCards}>
+                {showAllCards ? "GİZLE" : "DAHA FAZLA GÖR"}
+              </Button>
               {/* Newsletter Kayıt Formu */}
               <div className="flex justify-around pt-8">
                 <div className="text-white text-sm font-bold font-['Saira_Condensed'] leading-[14px]">
@@ -434,7 +486,7 @@ export const ExploreSection = () => {
               {/* Footer Linkleri */}
               <div className="flex flex-col  justify-center gap-8 pt-10">
                 {/* Navigasyon Linkleri */}
-                <div className="flex justify-center gap-8  text-md order-2 lg:order-1">
+                <div className="flex justify-center gap-6 text-md order-2 lg:order-1">
                   <a
                     href="#"
                     className="text-white font-['Saira_Condensed'] leading-[14px] hover:text-my-primary transition-colors"

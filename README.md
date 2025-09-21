@@ -1,3 +1,53 @@
+Proje Hakkında
+
+Bu proje, Next.js 15 App Router kullanılarak geliştirilmiş modern bir web uygulamasıdır. Next.js'in son sürümü ile oluşturulmuş, performans ve geliştirici deneyimi odaklı bir yapıya sahiptir.
+
+Proje Klasör Yapısı;
+
+rc/app/
+├── layout.tsx # Tüm sayfalar için temel düzen (layout)
+├── page.tsx # Kök sayfa
+├── globals.css # Global stil dosyası
+└── (routes)/ # Sayfa gruplandırma dizini
+
+Teknoloji Yığını
+-Framework: Next.js 15 (App Router)
+-Stil Yönetimi: Tailwind CSS v4
+-Programlama Dili: TypeScript
+-Rendering: Server-Side Rendering (SSR)
+-Slider Yapısı: SwiperJS
+
+Kurulum ve Çalıştırma
+Gereksinimler
+
+-Node.js 18+
+-npm veya yarn
+
+Proje Kurulumu
+
+Tarayıcıda Görüntüleme
+
+-Projeyi http://localhost:3000 adresinde açarak görüntüleyebilirsiniz.
+
+Sayfa Düzenleme
+
+-app/page.tsx dosyasını düzenleyerek sayfayı değiştirebilirsiniz. Dosya üzerindeki değişiklikler otomatik olarak yansıtılır.
+
+-Font Optimizasyonu
+
+Bu proje, `next/font` kullanarak Geist font ailesini otomatik olarak optimize eder.
+
+-Icon
+
+Iconlar için gemiş bir icon ağı bulunan React-icons ico kutuphanesı kullanılmıştır.
+
+-Responsive Mobil Menu için hamburger-react kutuphanesi kullanıldı.
+
+🚢 Vercel'de Deployment
+Next.js uygulamanızı en kolay şekilde Vercel Platformu üzerinden deploy edebilirsiniz.
+
+Vercel Deploy Link : "https://codezone-rapkology-project.vercel.app/tr"
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FaArrowRight,
   FaTwitter,
@@ -21,6 +21,7 @@ interface Article {
     content: string;
     authors: string[];
     avatar: string;
+    tags: string[];
   };
   createdAt: string;
 }
@@ -35,6 +36,48 @@ const formatDate = (dateString: string) => {
 };
 
 function MobileFooter() {
+  const [showAllCards, setShowAllCards] = useState(false);
+
+  // Badge filter state - başlangıçta "Türk Rap" aktif
+  const [activeFilter, setActiveFilter] = useState("Türk Rap");
+
+  // Tüm makaleleri al
+  const allArticles = articlesData as unknown as Article[];
+
+  // Filtrelenmiş makaleleri al
+  const getFilteredArticles = () => {
+    if (activeFilter === "Türk Rap") {
+      return allArticles.filter((article: Article) =>
+        article.attributes.tags.some(
+          (tag: string) =>
+            tag.toLowerCase().includes("türk rap") ||
+            tag.toLowerCase().includes("turkish rap")
+        )
+      );
+    }
+
+    return allArticles.filter((article: Article) =>
+      article.attributes.tags.some((tag: string) =>
+        tag.toLowerCase().includes(activeFilter.toLowerCase())
+      )
+    );
+  };
+
+  // İlk 3 kartı göster, showAllCards true ise tümünü göster
+  const filteredArticles = getFilteredArticles();
+  const displayedArticles = showAllCards
+    ? filteredArticles
+    : filteredArticles.slice(0, 3);
+
+  const toggleCards = () => {
+    setShowAllCards(!showAllCards);
+  };
+
+  const handleFilterChange = (filter: string) => {
+    setActiveFilter(filter);
+    setShowAllCards(false); // Yeni filtre seçildiğinde kartları kapat
+  };
+
   return (
     <div className="lg:hidden">
       <div className="flex items-center justify-between">
@@ -60,8 +103,9 @@ function MobileFooter() {
           {exploreCategories.map((category, index) => (
             <button
               key={index}
+              onClick={() => handleFilterChange(category)}
               className={`px-3 py-1.5 md:px-8 md:py-2 rounded-lg border text-xs md:text-sm font-medium transition-all duration-300 hover:bg-my-primary hover:text-black whitespace-nowrap ${
-                category === "Yabancı Rap"
+                category === activeFilter
                   ? "bg-my-primary text-black border-my-primary"
                   : "bg-transparent text-white border-white hover:border-my-primary"
               }`}
@@ -74,7 +118,7 @@ function MobileFooter() {
 
       {/* Vertical Layout - Kartlar alt alta */}
       <div className="space-y-16 mb-12 max-w-2xl mx-auto">
-        {articlesData.map((article: Article) => (
+        {displayedArticles.map((article: Article) => (
           <div
             key={`vertical-${article._id}`}
             className="flex flex-col bg-[#1a1a1a] rounded-lg overflow-hidden"
@@ -127,9 +171,11 @@ function MobileFooter() {
         ))}
       </div>
 
-      {/* Daha Fazla Gör Butonu - Sadece Vertical Layout'ta */}
+      {/* Daha Fazla Gör/Gizle Butonu - Sadece Vertical Layout'ta */}
       <div className="text-center mb-16">
-        <Button variant="secondary">DAHA FAZLA GÖR</Button>
+        <Button variant="secondary" onClick={toggleCards}>
+          {showAllCards ? "GİZLE" : "DAHA FAZLA GÖR"}
+        </Button>
         {/* Newsletter Kayıt Formu */}
         <div className="flex justify-around pt-8">
           <div className="text-white text-sm font-bold font-['Saira_Condensed'] leading-[14px]">
@@ -158,7 +204,7 @@ function MobileFooter() {
         {/* Footer Linkleri */}
         <div className="flex flex-col  justify-center gap-8 pt-10">
           {/* Navigasyon Linkleri */}
-          <div className="flex flex-wrap justify-center gap-8  text-md order-2 lg:order-1">
+          <div className="flex flex-wrap justify-center gap-8 text-md order-2 lg:order-1">
             <a
               href="#"
               className="text-white font-['Saira_Condensed'] leading-[14px] hover:text-my-primary transition-colors"

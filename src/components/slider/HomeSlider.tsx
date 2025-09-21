@@ -50,13 +50,14 @@ const HomeSlider: React.FC = () => {
         left-1/2 
         -translate-x-1/2 
         z-30 
+        sm:left-120
         text-my-primary 
         cursor-pointer
         md:top-116
         md:left-124
         md:-translate-x-1/2
         md:-translate-y-1/2
-       lg:bottom-56 
+        lg:bottom-56 
         lg:left-164
         lg:-translate-x-1/2
         xl:top-112 
@@ -101,18 +102,18 @@ const HomeSlider: React.FC = () => {
                     : ""
                 } ${
                   index === 0 || index === 2
-                    ? "!scale-125 !-left-10 sm:!scale-100 md:!scale-100 md:!left-0 md:!top-[5%]"
+                    ? "!scale-125 !-left-10 sm:!scale-100 sm:!left-0 md:!scale-100 md:!left-0 md:!top-[5%]"
                     : ""
                 }`}
               />
               <div
                 className={`absolute w-full sm:w-2/3 md:w-1/2 lg:w-2/5 xl:w-1/3 2xl:w-1/4 h-full flex flex-col justify-center space-y-3 md:space-y-3.5 px-4 sm:px-0 ${
                   index === 1
-                    ? "-top-[25%] sm:-top-[25%] sm:left-40 text-center md:text-start md:!-top-[14%] md:left-104 lg:!-top-[5%] lg:left-148 xl:text-start xl:left-[calc(45%+115px)]"
+                    ? "-top-[25%] sm:-top-[25%] sm:left-60 text-center md:text-start md:!-top-[14%] md:left-104 lg:!-top-[5%] lg:left-148 xl:text-start xl:left-[calc(45%+115px)]"
                     : ""
                 } ${
                   index === 0 || index === 2
-                    ? "-top-[25%] ps-12 sm:-top-44 sm:left-28 text-center sm:text-center md:-top-20 md:left-96 md:text-start md:right-40 lg:!left-136 lg:!-top-[4%] xl:text-start xl:!left-[calc(49%)] xl:!w-[40%]"
+                    ? "-top-[25%] ps-12 sm:-top-44 sm:left-52 text-center sm:text-center md:-top-20 md:left-96 md:text-start md:right-40 lg:!left-136 lg:!-top-[4%] xl:text-start xl:!left-[calc(49%)] xl:!w-[40%]"
                     : ""
                 }`}
               >

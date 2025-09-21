@@ -81,7 +81,7 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Dropdown Menu */}
         {isOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-my-background/90 backdrop-blur-[24px] mt-4 py-6 px-4">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-black/85 backdrop-blur-[24px] mt-4 py-6 px-4">
             <div className="flex flex-col space-y-4">
               <FaMagnifyingGlass className="text-white hover:text-my-primary transition-colors w-5.5 h-5.5 cursor-pointer" />
               <Link
