@@ -379,7 +379,7 @@ export const ExploreSection = () => {
                           className="object-cover w-full h-full"
                         />
                       </div>
-                      <span className="text-white text-sm font-normal font-['Saira']">
+                      <span className="text-white text-sm font-normal font-['Saira_Condensed']">
                         {article.attributes.authors[0]}
                       </span>
                     </div>
@@ -391,10 +391,10 @@ export const ExploreSection = () => {
 
                     {/* Alt Kısım - Tarih ve Buton */}
                     <div className="flex justify-between items-center">
-                      <span className="text-[#3B3B3B] text-xs font-normal font-['Saira']">
+                      <span className="text-[#3B3B3B] text-xs font-normal font-['Saira_Condensed']">
                         {formatDate(article.createdAt)}
                       </span>
-                      <button className="text-white text-xs font-normal font-['Saira'] hover:text-my-primary transition-colors duration-300">
+                      <button className="text-white text-xs font-normal font-['Saira_Condensed'] hover:text-my-primary transition-colors duration-300">
                         Daha Fazla Oku
                       </button>
                     </div>
