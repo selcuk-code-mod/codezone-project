@@ -1,5 +1,3 @@
-Proje Hakkında
-
 Bu proje, Next.js 15 App Router kullanılarak geliştirilmiş modern bir web uygulamasıdır. Next.js'in son sürümü ile oluşturulmuş, performans ve geliştirici deneyimi odaklı bir yapıya sahiptir.
 
 Proje Klasör Yapısı;
